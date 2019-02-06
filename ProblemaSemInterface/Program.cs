@@ -25,7 +25,7 @@ namespace ProblemaSemInterface
 
             CarRental carRental = new CarRental(start, finish, new Veiculo(model));
 
-            RentalServices rentalService = new RentalServices(hour, day);
+            RentalServices rentalService = new RentalServices(hour, day, new BrazilTaxService());
 
             rentalService.ProcessInvoice(carRental);
 
