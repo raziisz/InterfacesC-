@@ -13,7 +13,7 @@ namespace ExercicioDeFixacao
             Console.Write("Number: ");
             int cod = int.Parse(Console.ReadLine());
             Console.Write("Date (dd/MM/yyyy): ");
-            DateTime data = DateTime.Parse(Console.ReadLine());
+            DateTime data = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             Console.Write("Contract value: ");
             double total = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.Write("Enter number of installments: ");
@@ -26,6 +26,11 @@ namespace ExercicioDeFixacao
             ContratoServico cs = new ContratoServico(new PayPal());
             Console.WriteLine("Installments:");
             cs.ProcessoContrato(ctt, meses);
+
+            foreach (var prestacao in ctt.Prestacaos)
+            {
+                Console.WriteLine(prestacao);
+            }
             
         }
     }

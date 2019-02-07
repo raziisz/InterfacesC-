@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace ExercicioDeFixacao.Entidades
@@ -13,6 +14,11 @@ namespace ExercicioDeFixacao.Entidades
         {
             DataDeVencimento = dataDeVencimento;
             Valor = valor;
+        }
+
+        public override string ToString()
+        {
+            return DataDeVencimento.ToString("dd/MM/yyyy") + " - " + Valor.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ExercicioDeFixacao.Servicos
                 double valor1 = _servicoPagamento.Interesse(valor, i);
                 DateTime dt = contrato.Data.AddMonths(i);
                 double valorTotal = _servicoPagamento.TaxaDePagament(valor1);
-                contrato.Prestacaos.Add(new Prestacao(dt, valorTotal));
+                contrato.AddPrestacao(new Prestacao(dt, valorTotal));
                
             }
   
